@@ -1,0 +1,41 @@
+<ion-header [translucent]="false" >
+  <ion-toolbar [style.--background]="'black'">
+    <br>
+    <img class="logoSecundario " src="assets/DuocLogo2.png" alt="">
+    <ion-title #titulo style="text-align:center;">
+      Sistema de Asistencia DUOC
+    </ion-title>
+    <br>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="ion-text-center">
+    <h1 id="titulo">Eliminación de usuarios</h1>
+    <a id="topOfPage" href="#topOfPage"></a>
+  
+    <ion-card *ngFor="let u of usuarios; let i=index; trackBy: getUserId">
+      <ion-card-header>
+        <h4>{{u.nombre}}</h4>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{u.correo}}
+      </ion-card-content>
+
+      <!-- <ion-button (click)="editarUsuario(u)">
+        <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+      </ion-button> -->
+
+      <ion-button (click)="eliminarUsuario(u)" [style.--background]="'#f1b634'">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+      <br>
+    </ion-card>
+    <br>
+    <br>
+    <ion-router-link [routerLink]="['/login']" fill="clear" shape="round" class="underline" #iniciar>Volver a Inicio de Sesión</ion-router-link>
+    <br>
+    <br>
+  </ion-card>
+</ion-content>

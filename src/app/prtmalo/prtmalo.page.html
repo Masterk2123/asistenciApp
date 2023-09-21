@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+    <ion-toolbar [style.--background]="'black'">
+      <br>
+      <img class="logoSecundario" src="assets/DuocLogo2.png" alt="">
+      <ion-title #titulo style="text-align:center;">
+        Sistema de Asistencia DUOC
+      </ion-title>
+      <br>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="ion-text-center ion-padding-vertical">
+    <ion-card-header>
+      <ion-card-title>
+        Lo sentimos, no hemos podido recuperar tu contraseña. <br>Revisa los datos ingresados o contacta a tu administrador de servicio
+      </ion-card-title>
+      <img #emeg class="nope" src="assets/PreguntaMala.png" alt="">
+      <br>
+    </ion-card-header>
+    <ion-col class="ion-padding-vertical ion-text-center">
+      <ion-router-link [routerLink]="['/login']" class="underline" #iniciar>Iniciar Sesión</ion-router-link>
+    </ion-col>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,164 @@
+<ion-content [fullscreen]="true">
+  <br><br><br><br><br><br><br>
+  
+  <ion-card class="ion-text-center ion-padding-vertical">
+
+    <ion-card-header class="ion-padding-vertical">
+      <ion-card-title>Datos de la asignatura</ion-card-title>
+      <br>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="qrCode">
+
+      
+      <!-- Sede -->
+      <ion-row>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            Sede:
+          </ion-text>
+        </ion-col>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            {{qrCode.sede}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <!-- Sigla -->
+      <ion-row>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            Sigla:
+          </ion-text>
+        </ion-col>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            {{qrCode.idAsignatura}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <!-- Sección -->
+      <ion-row>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            Sección:
+          </ion-text>
+        </ion-col>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            {{qrCode.seccion}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <!-- Nombre Asignatura -->
+      <ion-row>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            Nombre Asignatura:
+          </ion-text>
+        </ion-col>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            {{qrCode.nombreAsignatura}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <!-- Nombre Profesor -->
+      <ion-row>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            Nombre Profesor:
+          </ion-text>
+        </ion-col>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            {{qrCode.nombreProfesor}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <!-- Día -->
+      <ion-row>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            Día:
+          </ion-text>
+        </ion-col>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            {{qrCode.dia}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <!-- Bloque de Inicio -->
+      <ion-row>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            Bloque de Inicio:
+          </ion-text>
+        </ion-col>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            {{qrCode.bloqueInicio}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <!-- Bloque de Termino -->
+      <ion-row>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            Bloque de Termino:
+          </ion-text>
+        </ion-col>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            {{qrCode.bloqueTermino}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <!-- Hora de Inicio -->
+      <ion-row>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            Hora de Inicio:
+          </ion-text>
+        </ion-col>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            {{qrCode.horaInicio}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <!-- Hora de Termino -->
+      <ion-row>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            Hora de Termino:
+          </ion-text>
+        </ion-col>
+        <ion-col col-6>
+          <ion-text class="ion-text-center">
+            {{qrCode.horaFin}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <br>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="!qrCode">
+      <ion-text>
+        <h1>No se han encontrado datos, por favor, vuelva a 
+          <ion-text (click)="inicio()" style="color: blue;">
+            INICIO
+          </ion-text>
+          para escanear el código QR</h1>
+      </ion-text>
+    </ion-card-content>
+
+    <ion-col class="ion-padding-vertical">
+      <ion-button (click)="salir()" fill="clear" shape="round" class="underline" #cerrar>
+        Cerrar Sesión
+      </ion-button>
+    </ion-col>
+  </ion-card>
+</ion-content>
+

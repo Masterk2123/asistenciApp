@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+    <ion-toolbar [style.--background]="'black'">
+      <br>
+      <img class="logoSecundario" src="assets/DuocLogo2.png" alt="">
+      <ion-title #titulo style="text-align:center;">
+        Sistema de Asistencia DUOC
+      </ion-title>
+      <br>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="ion-text-center ion-padding-vertical">
+    <ion-card-header>
+      <ion-card-title>Recuperar Constraseña</ion-card-title>
+      <img #imag class="yep" src="assets/PreguntaBuena.png" alt="">
+      <br>
+      <ion-card-subtitle>Tu contraseña es</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle id="contra">"{{usuario.password}}"</ion-card-subtitle>
+    </ion-card-header>
+    <ion-col class="ion-padding-vertical ion-text-center">
+      <ion-router-link [routerLink]="['/login']" class="underline" #iniciar>Iniciar Sesión</ion-router-link>
+    </ion-col>
+  </ion-card>
+</ion-content>

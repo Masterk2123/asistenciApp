@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true" [style.--background]="escaneando?'#00000000':'#ffffff'" id="ContentInicio"> 
+  <br><br><br><br><br><br><br>
+
+  <ion-card class="ion-text-center ion-padding-vertical" [hidden]="escaneando">
+
+    <ion-card-header>
+      <ion-card-title #bienvenido>Bienvenido/a</ion-card-title>
+      <ion-card-subtitle #nombre id="saludo">{{usuario.nombre}}</ion-card-subtitle>
+    </ion-card-header>
+
+      <ion-text class="ion-text-center">
+        <i>
+          Escanea el Código QR para registrar tu <br>
+          asistencia a clases
+        </i>
+        <br>
+      </ion-text>
+      <br>
+      <ion-button class="scan-button" (click)="comenzarEscaneoQR()" shape="round" [style.--background]="'#f1b634'" [hidden]="escaneando">
+        Comenzar escaneo de código
+      </ion-button>
+      <ion-row class="ion-text-center">
+        <ion-col size="12">
+          <ion-button (click)="salir()" fill="clear" shape="round" class="underline" #cerrar>
+            Cerrar Sesión
+          </ion-button>
+        </ion-col>
+      </ion-row>
+  </ion-card>
+  <br>
+  <div class="scan-box" [hidden]="!escaneando"></div>
+  <br>
+  <ion-button class="scan-button2" shape="round" (click)="detenerEscaneoQR()" [style.--background]="'#f1b634'" [hidden]="!escaneando">
+    Detener escaneo de código
+  </ion-button> 
+  
+</ion-content>

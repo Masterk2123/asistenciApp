@@ -1,0 +1,54 @@
+<ion-header [translucent]="false" >
+  <ion-toolbar [style.--background]="'black'">
+    <br>
+    <img class="logoSecundario " src="assets/DuocLogo2.png" alt="">
+    <ion-title #titulo style="text-align:center;">
+      Sistema de Asistencia DUOC
+    </ion-title>
+    <br>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding-vertical">
+    <ion-card class="ion-text-center">
+      <ion-card-title class="ion-text-center">
+        <ion-label>
+          <h1>Crea tu cuenta </h1> 
+          <h1>de asistencia Duoc</h1>
+        </ion-label>
+      </ion-card-title>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input type="text" [(ngModel)]="correo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Pregunta secreta</ion-label>
+          <ion-input type="text" [(ngModel)]="preguntaSecreta"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Respuesta secreta</ion-label>
+          <ion-input type="text" [(ngModel)]="respuestaSecreta"></ion-input>
+        </ion-item>
+      </ion-card-content>
+      <br>
+      <br>
+      <ion-button shape="round" [style.--background]="'#f1b634'" (click)="registerNewUser()">Registrar</ion-button>
+      <ion-button shape="round" [style.--background]="'#f1b634'" (click)="createTestingUsers()">Crear usuarios de prueba</ion-button>
+      <br>
+      <br>
+      <ion-router-link [routerLink]="['/login']" fill="clear" shape="round" class="underline" #iniciar>Volver a Inicio de Sesión</ion-router-link>
+      <br>
+      <br>
+    </ion-card>
+  </div>
+</ion-content>

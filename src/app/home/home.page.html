@@ -1,0 +1,31 @@
+<ion-header [translucent]="false" >
+    <ion-toolbar [style.--background]="'black'">
+      <br>
+      <img class="logoSecundario " src="assets/DuocLogo2.png" alt="">
+      <ion-title #titulo style="text-align:center;">
+        Sistema de Asistencia DUOC
+      </ion-title>
+      <br>
+    </ion-toolbar>
+
+  <ion-segment value="inicio" (ionChange)="segmentChanged($event)">
+
+    <ion-segment-button value="inicio">
+      <ion-label>Inicio</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="mi-clase">
+      <ion-label>Mi Clase</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="comentarios-posts">
+      <ion-label>Comentarios</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">   
+  <ion-router-outlet></ion-router-outlet>
+</ion-content>

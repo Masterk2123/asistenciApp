@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar [style.--background]="'black'">
+    <br>
+    <img class="logo" src="assets/DuocLogo2.png" alt="">
+    <ion-title #titulo style="text-align:center;">
+      Sistema de Asistencia DUOC
+    </ion-title>
+    <br>
+  </ion-toolbar>
+</ion-header>
+<br>
+<br>
+<br>
+<ion-content [fullscreen]="true">
+  <ion-card class="ion-text-center ion-padding-vertical size-14">
+      <div id="bienvenido">Bienvenido al Sistema de asistencia</div>
+    <ion-card-content>
+      <ion-item>
+        <ion-col size="12">
+          <ion-label position="floating">Ingresa tu Correo</ion-label>
+          <ion-input type="text" id="correo" [(ngModel)]="usuario.correo"></ion-input>  
+        </ion-col>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Ingresa tu Contraseña</ion-label>
+        <ion-input type="password" id="password" [(ngModel)]="usuario.password"></ion-input>
+      </ion-item>
+      <br>
+      <br>
+      <br>
+      <ion-row class="ion-text-center">
+        <ion-col size="12">
+          <ion-button (click)="ingresar()" fill="solid" [style.--background]="'#f1b634'" shape="round" #iniciar>Ingresar</ion-button>
+          <ion-button (click)="registrar()" fill="solid" [style.--background]="'#f1b634'" shape="round">Registrarse</ion-button>
+          <ion-button (click)="eliminar()" fill="solid" [style.--background]="'#f1b634'" shape="round">Eliminar</ion-button>
+        </ion-col>
+        <ion-col size="12">
+          <a class="cerrar" [routerLink]="['/reestablecer-contra']" #contra>Reestablecer contraseña</a>
+        </ion-col> 
+      </ion-row>
+  
+    </ion-card-content>
+  </ion-card>
+</ion-content>
